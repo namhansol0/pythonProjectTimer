@@ -1,6 +1,6 @@
 from tkinter import *
 import math
-# ---------------------------- CONSTANTS ------------------------------- #
+# ---------------------------- 요소들 ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -11,7 +11,7 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
-# ---------------------------- TIMER RESET ------------------------------- #
+# ---------------------------- 리셋 버튼 ------------------------------- #
 def reset_timer():
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
@@ -20,7 +20,7 @@ def reset_timer():
     global reps
     reps = 0
 
-# ---------------------------- TIMER MECHANISM ------------------------------- #
+# ---------------------------- 타이머 ------------------------------- #
 def start_timer():
     global reps
     reps += 1
@@ -44,7 +44,7 @@ def start_timer():
 
 
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+# ---------------------------- 타이머 카운트 다운 ------------------------------- #
 def count_down(count):
 
     count_min = math.floor(count / 60)
@@ -65,7 +65,7 @@ def count_down(count):
         check_marks.config(text=marks)
 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ---------------------------- UI  ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
